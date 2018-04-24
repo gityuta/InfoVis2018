@@ -22,7 +22,7 @@ function main()
     document.body.appendChild( renderer.domElement );
 
     var vertices = [
-        [ -2, -1, -1 ], // 0
+        [ -1, -1, -1 ], // 0
         [  1, -1, -1 ], // 1
         [  1, -1,  1 ], // 2
         [ -1, -1,  1 ], // 3
