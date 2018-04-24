@@ -68,7 +68,7 @@ function main()
     material.vertexColors = THREE.FaceColors;
     for ( var i = 0; i < nfaces; i++ )
     {
-        geometry.faces[i].color = new THREE.Color( 1, 1, 1 );
+        geometry.faces[i].color = new THREE.Color( 0.5, 1, 1 );
     }
 
     geometry.computeFaceNormals();
