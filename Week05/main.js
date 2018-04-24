@@ -22,7 +22,7 @@ function main()
     document.body.appendChild( renderer.domElement );
 
     var vertices = [
-        [ -1, -1, -1 ], // 0
+        [ -2, -1, -1 ], // 0
         [  1, -1, -1 ], // 1
         [  1, -1,  1 ], // 2
         [ -1, -1,  1 ], // 3
@@ -68,7 +68,7 @@ function main()
     material.vertexColors = THREE.FaceColors;
     for ( var i = 0; i < nfaces; i++ )
     {
-        geometry.faces[i].color = new THREE.Color( 1-0.01*i, 1-0.01*i, 1 );
+        geometry.faces[i].color = new THREE.Color( 0, 1, 1 );
     }
 
     geometry.computeFaceNormals();
@@ -105,7 +105,7 @@ function main()
         var intersects = raycaster.intersectObject( cube );
         if ( intersects.length > 0 )
         {
-            intersects[0].face.color.setRGB( 1, 1, 1 );
+            intersects[0].face.color.setRGB( 0, 0, 1 );
             intersects[0].object.geometry.colorsNeedUpdate = true;
         }
     }
@@ -115,8 +115,8 @@ function main()
     function loop()
     {
         requestAnimationFrame( loop );
-        cube.rotation.x += 0.001;
-        cube.rotation.y += 0.001;
+        cube.rotation.x += 0.005;
+        cube.rotation.y += 0.002;
         renderer.render( scene, camera );
     }
 }
