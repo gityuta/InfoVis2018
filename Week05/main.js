@@ -22,7 +22,7 @@ function main()
     document.body.appendChild( renderer.domElement );
 
     var vertices = [
-        [ -0.5, -0.5, -0.5 ], // 0
+        [ -1, -1, -1 ], // 0
         [  1, -1, -1 ], // 1
         [  1, -1,  1 ], // 2
         [ -1, -1,  1 ], // 3
@@ -68,7 +68,7 @@ function main()
     material.vertexColors = THREE.FaceColors;
     for ( var i = 0; i < nfaces; i++ )
     {
-        geometry.faces[i].color = new THREE.Color( 0.5, 1, 1 );
+        geometry.faces[i].color = new THREE.Color( 1-0.01*i, 1-0.01*i, 0.01*i );
     }
 
     geometry.computeFaceNormals();
