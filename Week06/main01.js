@@ -32,8 +32,8 @@ function main()
     function loop()
     {
         requestAnimationFrame( loop );
-        torus_knot.rotation.x += 0.01;
-        torus_knot.rotation.y += 0.01;
+        torus_knot.rotation.x += 0.00;
+        torus_knot.rotation.y += 0.00;
         renderer.render( scene, camera );
     }
 }
