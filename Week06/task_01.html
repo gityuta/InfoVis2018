@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>W06: Task 01</title>
+        <title> W06: Task 01</title>
     </head>
     <body>
         <script src="https://threejs.org/build/three.min.js"></script>
@@ -31,32 +31,6 @@
              vec3 L = normalize(light_position - point_position.xyz);
              vec3 N = normalize(normal_vector);
              point_color = LambertianReflection(C, L, N);
-             gl_Position = projectionMatrix * point_position;
-         }
-        </script>
-
-        <script type="x-shader/x-vertex" id="lambert2.vert">
-         varying vec3 point_color;
-         varying vec4 point_position;
-         varying vec3 normal_vector;
-         uniform vec3 light_position;
-
-         vec3 LambertianReflection(vec3 C, vec3 L, vec3 N)
-         {
-             float ka = 0.4;
-             float kd = 0.6;
-
-             float dd = max(dot(N, L), 0.0);
-             float Ia = ka;
-             float Id = kd * dd;
-             return C * (Ia + Id);
-         }
-
-         void main()
-         {
-             point_color = color;
-             point_position = modelViewMatrix * vec4(position, 1.0);
-             normal_vector = normalMatrix * normal;
              gl_Position = projectionMatrix * point_position;
          }
         </script>
@@ -102,7 +76,7 @@
          }
         </script>
 
-        <script type="x-shader/x-fragment" id="gouraud.frag">
+        <script type="x-shader/x-fragment" id="shader.frag">
          varying vec3 point_color;
 
          void main()
@@ -111,40 +85,9 @@
          }
         </script>
 
-        <script type="x-shader/x-fragment" id="gouraud2.frag">
-         varying vec3 point_color;
-         varying vec4 point_position;
-         varying vec3 normal_vector;
-         uniform vec3 light_position;
-
-         vec3 LambertianReflection(vec3 C, vec3 L, vec3 N)
-         {
-             float ka = 0.4;
-             float kd = 0.6;
-
-             float dd = max(dot(N, L), 0.0);
-             float Ia = ka;
-             float Id = kd * dd;
-             return C * (Ia + Id);
-         }
-
-         void main()
-         {
-            point_position = modelViewMatrix * vec4(position, 1.0);
-            normal_vector = normalMatrix * normal;
-            
-            vec3 C = color;
-            vec3 L = normalize(light_position - point_position.xyz);
-            vec3 N = normalize(normal_vector);
-
-            vec3 shaded_color = LambertianReflection(C, L, N);
-            gl_FragColor = vec4(shaded_color, 1.0 );
-         }
-        </script>
-
-        <script src="main02.js"></script>
+        <script src="task_01_main01.js"></script>
         <script> main(); </script>
-        <script src="main03.js"></script>
+        <script src="task_01_main02.js"></script>
         <script> main(); </script>
     </body>
 </html>
