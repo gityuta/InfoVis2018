@@ -24,8 +24,8 @@ function main()
     var geometry = new THREE.TorusKnotGeometry( 1, 0.3, 100, 20 );
     var material = new THREE.ShaderMaterial({
         vertexColors: THREE.VertexColors,
-        vertexShader: document.getElementById('cook.vert').text,
-        fragmentShader: document.getElementById('normal.frag').text,
+        vertexShader: document.getElementById('normal.vert').text,
+        fragmentShader: document.getElementById('blinn.frag').text,
         uniforms: {
             light_position: {type: 'v3', value: light.position }
         }
