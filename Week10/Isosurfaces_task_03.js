@@ -21,8 +21,8 @@ function Isosurfaces( volume, isovalue, screen)
 
     var material = new THREE.ShaderMaterial({
         vertexColors: THREE.VertexColors,
-        vertexShader: document.getElementById('lambertian.vert').text,
-        fragmentShader: document.getElementById('normal.frag').text,
+        vertexShader: document.getElementById('normal.vert').text,
+        fragmentShader: document.getElementById('lambertian.frag').text,
         uniforms:{
             light_position: { type : 'v3', value: screen.light.position },
             material_color: { type : 'v3', value: materialColor},
